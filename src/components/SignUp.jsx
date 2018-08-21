@@ -8,7 +8,7 @@ import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import PermIdentity from '@material-ui/icons/PermIdentity';
 import Paper from '@material-ui/core/Paper';
-import {Typography, TextField} from '@material-ui/core';
+import {Typography} from '@material-ui/core';
 import withStyles from '@material-ui/core/styles/withStyles';
 import swal from 'sweetalert';
 
@@ -61,6 +61,12 @@ class SignUp extends Component {
     };
   }
 
+  componentWillReceiveProps(newProps) {
+    if(newProps) {
+      console.log("newProps are: ", newProps)
+    }
+  }
+  
   // Manging form values with state
   handleChange = name => event => {
     var value = event.target.value ? event.target.value : ''
@@ -93,7 +99,7 @@ class SignUp extends Component {
         email : this.state.regForm.email,
         password : this.state.regForm.password 
       }
-      console.log("Final data: ",SignUpData)
+      this.props.registerMe(SignUpData)
     }
   }
   render() {
