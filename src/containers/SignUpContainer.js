@@ -3,7 +3,6 @@ import SignUp from '../components/SignUp.jsx'
 import { signup } from '../actions/signup'
 
 const mapStateToProps = (state) => {
-	console.log("mapStateToProps: ",state.registerReducer)
 	const { signupData } = state.registerReducer;
   	return { signupData };
 }
@@ -11,7 +10,6 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
 	return {
 		registerMe: (payload) => {
-			console.log("Container payload1:",payload)
        		dispatch(signup(payload));
 		}
 	};
