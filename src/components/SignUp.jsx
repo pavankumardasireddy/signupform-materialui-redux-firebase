@@ -50,14 +50,14 @@ class SignUp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        regForm: {
-          firstName: "",
-          lastName: "",
-          phone: "",
-          email: "",
-          password: "",
-          cPassword: ""
-        }
+      regForm: {
+        firstName: "",
+        lastName: "",
+        phone: "",
+        email: "",
+        password: "",
+        cPassword: ""
+      }
     };
   }
 
@@ -100,6 +100,7 @@ class SignUp extends Component {
         password : this.state.regForm.password 
       }
       this.props.registerMe(SignUpData)
+      //swal("Success!", "You've registered successfully!", "success")
     }
   }
   render() {
